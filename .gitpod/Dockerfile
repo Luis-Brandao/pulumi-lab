@@ -13,18 +13,3 @@ RUN mkdir -p /home/gitpod/dotnet && \
 
 ENV DOTNET_ROOT=/home/gitpod/dotnet
 ENV PATH=$PATH:/home/gitpod/dotnet:/usr/local/bin
-
-
-RUN apt-get install sudo
-RUN apt install python3
-
-# Add non-root user
-ARG USER_NAME=user
-ARG USER_UID=1000
-ARG USER_GID=$USER_UID
-
-
-USER $USER_NAME
-
-# Install azure li
-RUN curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
